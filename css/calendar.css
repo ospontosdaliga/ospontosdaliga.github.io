@@ -1,0 +1,70 @@
+.linhaJor {
+}
+
+.colJor1{
+}
+
+.jornadaCabecalho {
+}
+
+.espacamEsq {
+    float: left;
+    font-size: x-small;
+}
+
+.espacamDire {
+    float: right;
+    font-size: x-small;
+}
+
+.modCaixsJorn > div
+{
+    width: 250px;
+    /*height: 400px;*/
+    background-color: lightcyan;
+    border: 2px solid yellow;
+}
+
+.jornadaCabecalho {
+    float: left;
+    width: 250px;
+    height: 50px;
+}
+
+.jornadaJogos {
+    float: left;
+    width: 250px;
+    /*height: 300px;*/
+    
+    font-size: small;
+}
+
+.jornadaJogos div:nth-child(odd)
+{
+    background-color: #AA8888;
+}
+
+.jornadaJogos div:nth-child(even)
+{
+    background-color: #8888AA;
+}
+
+.jorEqui1{
+    float: left;
+    width: 100px;
+}
+
+.jorEquiResul {
+    float: left;
+    width: 20px;
+}
+
+.jorSep1 {
+    float: left;
+    width: 10px;
+}
+
+.jorEqui2{
+    float: left;
+    width: 100px;
+}

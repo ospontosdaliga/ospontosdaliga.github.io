@@ -1,0 +1,405 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8" />
+<html>
+    <head>
+        <link rel="icon" href="https://lh6.googleusercontent.com/qJj_kliyP5PugM6ThrtfNlpsB4Y-CIhcX_uf6zyXWMrFaztAnVry6htW9RF6-ETf-TUz4xTjYieQuqA=w940-h673">
+        <link href="../css/main.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+        <script src="../js/jquery.min.js" type="application/javascript"></script>
+        <script src="../js/main.js" type="application/javascript"></script>
+        <script src="../js/tracker.js" type="application/javascript"></script>
+        <script>
+            setStartPage(2);
+        </script>
+    </head>
+    <body onload="runAfterPageLoad();" class="background-image-1516">
+        <div id="header" class="background-image-dark-1516">
+            <div class="centerPage headerLine">
+                <div id="title">
+                    <span>Os Pontos da Liga</span>
+                    <select id="leagueSelect" onchange="setLeague();">
+                      <option value="1516" selected>2015 / 2016</option>
+                      <option value="1617">2016 / 2017</option>
+                    </select>
+                </div>
+                <div id="userInfo"></div>
+            </div>
+            <div id="headerNav" class="centerPage headerLine">
+                <div id="b1" class="hButton" onclick="setPageTo(1);">Notícias</div>
+                <div id="b2" class="hButton hSelected" onclick="setPageTo(2);">Jogadores</div>
+                <div id="b3" class="hButton" onclick="setPageTo(3);">Treinadores</div>
+                <div id="b4" class="hButton" onclick="setPageTo(4);">Calendário</div>
+                <div id="b5" class="hButton" onclick="setPageTo(5);">Classificação</div>
+			<img id="MenuButton" class="dropbtn" onclick="$('#fbButton,#fbMenu').removeClass('showMenu');$('#MenuButton,#Menu').toggleClass('showMenu');"  />
+                <div id="fbButton" class="dropbtn" onclick="$('#MenuButton, #Menu').removeClass('showMenu');$('#fbButton,#fbMenu').toggleClass('showMenu');">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.476-1.195 1.176v1.54h2.39l-.31 2.416h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"></path></svg>
+                </div>
+            </div>
+        </div>
+
+        <div id="dropdownMenu" class="centerPage">
+            <div id="DropdownContainer">
+                <div id="fbMenu">
+                    <div class='dropdown-content'>
+                        
+                    </div>
+                </div>
+                <div id="Menu">
+                </div>
+            </div>
+        </div>
+
+        <div id="page" class="centerPage">
+            <div id="players">
+                <input class="fuzzy-search" placeholder="Pesquisar..." />
+                <table class="styledTable">
+                    <thead class="sortBar">
+                        <tr>
+                            <th colspan="4">Jogador</th>
+                            <th colspan="3">Pontos</th>
+                            <th colspan="3">Pontos no Relvado</th>
+                            <th colspan="2" class="">Valor</th>
+                            <th colspan="2" class="">Custo/Ponto</th>
+                        </tr>
+                        <tr class="accent">
+                            <th>
+                                <button class="sort" data-sort="name">
+                                    Nome
+                                </button>
+                            </th>
+                            <th>
+                                <button class="sort" data-sort="position">
+                                    Pos.
+                                </button>
+                            </th>
+                            <th>
+                                <button class="sort" data-sort="rank">
+                                    Rank
+                                </button>
+                            </th>
+                            <th class="border">
+                                <button class="sort" data-sort="team">
+                                    Equipa
+                                </button>
+                            </th>
+                            <th class="normalColumn">
+                                <button class="sort" data-sort="roundPoints">
+                                    Ronda
+                                </button>
+                            </th>
+                            <th class="normalColumn">
+                                <button class="sort" data-sort="averagePointsPerRound">
+                                    Média
+                                </button>
+                            </th>
+                            <th class="normalColumn border">
+                                <button class="sort" data-sort="totalPoints">
+                                    Total
+                                </button>
+                            </th>
+                            <th class="normalColumn">
+                                <button class="sort" data-sort="gamesPlayed">
+                                    Presenças
+                                </button>
+                            </th>
+                            <th class="normalColumn">
+                                <button class="sort" data-sort="averagePointsPerRoundWhenPlaying">
+                                    Média
+                                </button>
+                            </th>
+                            <th class="normalColumn border">
+                                <button class="sort" data-sort="totalPointsWhenPlaying">
+                                    Total
+                                </button>
+                            </th>
+                            <th class="normalColumn">
+                                <button class="sort" data-sort="initialValue">
+                                    Inicial
+                                </button>
+                            </th>
+                            <th class="normalColumn border">
+                                <button class="sort" data-sort="currentValue">
+                                    Atual
+                                </button>
+                            </th>
+                            <th class="normalColumn">
+                                <button class="sort" data-sort="costPerPointOfInitialValue">face a V.I.
+                                    <span class="tooltiptext">cost Per Point Of Initial Value</span>
+                                </button>
+                            </th>
+                            <th class="normalColumn lastColumn">
+                                <button class="sort" data-sort="costPerPointOfCurrentValue">face a V.A.
+                                    <span class="tooltiptext">cost Per Point Of Current Value</span>
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="14">
+                                <div id="allPlayers" style="min-height: 200px;" class="scrollable">
+                                    <table class="table">
+                                        <tbody class="list">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="playerdetails" class="boxContainer box1of1" style="display: none;">
+                <div class="boxHeader">
+                    Detalhes do Jogador
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent scrollable">
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" style="text-align: center;">
+                                        Jogador a comparar
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td colspan="2" style="text-align: center;">
+                                        Tipo de gráfico
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:15%; text-align: center;">
+<!--
+                                        <button id="slotColor0"
+    class="jscolor {valueElement:null,value:'ffffff'}"
+    style="width:20px; height:20px;border-radius:10px; display:none;"></button>
+-->
+                                        <input type="radio" id="player1" name="player" checked="true"/>
+                                        <label for="player1">Jogador 1</label>
+                                    </td>
+                                    <td style="width:15%; text-align: center;">
+<!--
+                                        <button id="slotColor1"
+    class="jscolor {valueElement:null,value:'ff0000'}"
+    style="width:20px; height:20px;border-radius:10px; display:none;"></button>
+-->
+                                        <input type="radio" id="player2" name="player"/>
+                                        <label for="player2">Jogador 2</label>
+                                    </td>
+                                    <td style="width:15%; text-align: center;">
+<!--
+                                        <button id="slotColor2"
+    class="jscolor {valueElement:null,value:'00ff00'}"
+    style="width:20px; height:20px;border-radius:10px; display:none;"></button>
+-->
+                                        <input type="radio" id="player3" name="player"/>
+                                        <label for="player3">Jogador 3</label>
+                                    </td>
+                                    <td style="width:15%; text-align: center;">
+<!--
+                                        <button id="slotColor3"
+    class="jscolor {valueElement:null,value:'5555ff'}"
+    style="width:20px; height:20px;border-radius:10px; display:none;"></button>
+-->
+                                        <input type="radio" id="player4" name="player"/>
+                                        <label for="player4">Jogador 4</label>
+                                    </td>
+                                    <td style="width:26%">
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <button id="graph1" class="mButton" onclick="javascript:selectedChartType = 0;loadChart();">Pts</button>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <button id="graph2" class="mButton" onclick="javascript:selectedChartType = 1;loadChart();">&#8721;</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <canvas id="canvas1" height="200" width="800"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script src="../js/dataaccess.js"></script>
+<script src="../js/20152016/pinfo.js"></script>
+<script>
+    function updateItemHeight()
+    {
+        if($("#playerdetails").is(":visible"))
+        {
+            $("#allPlayers").height($(window).height() - 700);
+        }
+        else
+        {
+            $("#allPlayers").height($(window).height() - 325);
+        }
+    }
+    
+    updateItemHeight();
+    
+    $( window ).resize(function() {
+        updateItemHeight();
+    });
+    
+    // Load Players
+
+    getPlayerIds().forEach(addPlayerToList);
+    
+    function addPlayerToList(item, index) {
+        $(".list").append("<tr class='listRow' onclick='getPaging(this.id);' id='"+ item +"'>" +
+          "<td colspan='4'>" +
+          "<p class='name rank" + getPlayerInfo(item)["rank"] + "'>" + getPlayerInfo(item)["name"] + "</p>" +
+          "<p class='positionDescription'>" + getPlayerInfo(item)["positionDescription"] +" </p>" +
+          "<p class='rankDescription'>" + getPlayerInfo(item)["rankDescription"] + "</p>" +
+          "<p class='team'> do " + getPlayerInfo(item)["team"] + "</p>" +
+            "<span class='position' style='color:transparent; font-size:0px;'>" + getPlayerInfo(item)["position"] + "</span>" +
+            "<span class='rank' style='color:transparent; font-size:0px;'>" + getPlayerInfo(item)["rank"] + "</span>" +
+          "</td>" +
+          "<td class='roundPoints normalColumn'>" + getPlayerInfo(item)["roundPoints"] +" </td>" +
+          "<td class='averagePointsPerRound normalColumn'>" + getPlayerInfo(item)["averagePointsPerRound"] + "</td>" +
+          "<td class='totalPoints normalColumn standOutCell'>" + getPlayerInfo(item)["totalPoints"] +" </td>" +
+          "<td class='gamesPlayed normalColumn'>" + getPlayerInfo(item)["gamesPlayed"] + "</td>" +
+          "<td class='averagePointsPerRoundWhenPlaying normalColumn'>" + getPlayerInfo(item)["averagePointsPerRoundWhenPlaying"] + "</td>" +
+          "<td class='totalPointsWhenPlaying normalColumn'>" + getPlayerInfo(item)["totalPointsWhenPlaying"] + "</td>" +
+          "<td class='initialValue normalColumn'>" + getPlayerInfo(item)["initialValue"] + "</td>" +
+          "<td class='currentValue normalColumn'>" + getPlayerInfo(item)["currentValue"] + "</td>" +
+          "<td class='costPerPointOfInitialValue normalColumn'>" + getPlayerInfo(item)["costPerPointOfInitialValue"] + "</td>" +
+          "<td class='costPerPointOfCurrentValue normalColumn'>" + getPlayerInfo(item)["costPerPointOfCurrentValue"] + "</td>" +
+           "</tr>");
+    }
+</script>
+<script src="../js/list.js"></script>
+<script src="../js/list.fuzzysearch.min.js"></script>
+<script>
+    var options = {
+      valueNames: [ 'name', 'position', 'rank', 'rankDescription', 'team', 'roundPoints', 'totalPoints', 'averagePointsPerRound', 'gamesPlayed', 'totalPointsWhenPlaying', 'averagePointsPerRoundWhenPlaying', 'initialValue', 'costPerPointOfInitialValue', 'currentValue', 'costPerPointOfCurrentValue' ]
+        ,plugins: [ ListFuzzySearch() ]
+    };
+
+    var userList = new List('players', options);
+    userList.sort('totalPoints', { order: "desc" });
+</script>
+
+<script src="../js/chart.min.js"></script>
+<script src="../js/20152016/ppoints.js"></script>
+<script src="../js/20152016/oppoints.js"></script>
+
+<script>
+    var slots = [0,0,0,0];
+    var slotColors = ['255,255,255'
+                      ,'255,0,0'
+                      ,'0,255,0'
+                      ,'85,85,255'];
+    
+    var selectedChartType = 0;
+    
+    function getPlayerColor(slotId)
+    {
+        return slotColors[slotId];
+    }
+    
+    function choosePlayer(playerId)
+    {
+        var p1 = document.getElementById('player1');
+        var p2 = document.getElementById('player2');
+        var p3 = document.getElementById('player3');
+        var p4 = document.getElementById('player4');
+        
+       if ((p1.checked == true)) {
+            slots[0] = playerId;
+            return false;
+        }
+        else if ((p2.checked == true)) {
+            slots[1] = playerId;
+            return false;
+        }
+        else if ((p3.checked == true)) {
+            slots[2] = playerId;
+            return false;
+        }
+        else if ((p4.checked == true)) {
+            slots[3] = playerId;
+            return false;
+        }   
+    }
+    
+    var myLineChart1;
+    
+    function getPlayerData(slotId) {
+        if(selectedChartType == 0)
+        {
+            return getPlayerPoints(slotId);
+        }
+        else if(selectedChartType == 1)
+        {
+            return getOverallPlayerPoints(slotId);
+        }
+    }
+
+    function loadChart(){
+        var index;
+        var dataset = [];
+        
+        for (index = 0; index < slots.length; ++index) {
+            if(slots[index] > 0)
+            {
+                dataset.push({
+                    label: getPlayerInfo(slots[index])["name"] + " (" + getPlayerInfo(slots[index])["team"] + ")",
+                    backgroundColor: "rgba(" + getPlayerColor(index) + ",0.01)",
+                    borderColor: "rgba(" + getPlayerColor(index) + ",1)",
+                    borderWidth: 1,
+                    data : getPlayerData(slots[index])
+                });
+            }
+        }
+        
+        var chartData = {
+            labels : getLabels20162017(),
+            datasets : dataset,
+        }
+    
+        drawChart(chartData);
+	}
+</script>
+
+<script>
+function drawChart(chartData) {
+    if(myLineChart1 != null) { myLineChart1.destroy(); }
+    
+    var ctx = document.getElementById("canvas1").getContext("2d");
+    myLineChart1 = new Chart(ctx, {
+        type: 'line',
+        data: chartData,
+        options: {
+            title: {
+                display: true,
+                fontColor: "rgba(247,247,247,1)",
+                fontFamily: "'Titillium Web', 'sans-serif'",
+                fontStyle: "normal",
+                text: 'Pontos por Ronda'
+            },
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: "rgba(180,180,180,1)",
+                    fontFamily: "'Titillium Web', 'sans-serif'"
+                }
+            }
+        }
+    });
+}
+
+function getPaging(str) {
+    $("#playerdetails").show();
+
+    updateItemHeight();
+    
+    choosePlayer(str);
+    
+    loadChart();
+}
+
+</script>

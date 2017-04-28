@@ -1,0 +1,458 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8" />
+<html>
+    <head>
+        <link rel="icon" href="https://lh6.googleusercontent.com/qJj_kliyP5PugM6ThrtfNlpsB4Y-CIhcX_uf6zyXWMrFaztAnVry6htW9RF6-ETf-TUz4xTjYieQuqA=w940-h673">
+        <link href="../css/main.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+        <script src="../js/jquery.min.js" type="application/javascript"></script>
+        <script src="../js/main.js" type="application/javascript"></script>
+        <script src="../js/tracker.js" type="application/javascript"></script>
+        <script>
+            setStartPage(1);
+        </script>
+    </head>
+    <body onload="runAfterPageLoad();" class="background-image-1617">
+        <div id="header" class="background-image-dark-1617">
+            <div class="centerPage headerLine">
+                <div id="title">
+                    <span>Os Pontos da Liga</span>
+                    <select id="leagueSelect" onchange="setLeague();">
+                      <option value="1516">2015 / 2016</option>
+                      <option value="1617" selected>2016 / 2017</option>
+                    </select>
+                </div>
+                <div id="userInfo"></div>
+            </div>
+            <div id="headerNav" class="centerPage headerLine">
+                <div id="b1" class="hButton hSelected" onclick="setPageTo(1);">Notícias</div>
+                <div id="b2" class="hButton" onclick="setPageTo(2);">Jogadores</div>
+                <div id="b3" class="hButton" onclick="setPageTo(3);">Treinadores</div>
+                <div id="b4" class="hButton" onclick="setPageTo(4);">Calendário</div>
+                <div id="b5" class="hButton" onclick="setPageTo(5);">Classificação</div>
+            <img id="MenuButton" class="dropbtn" onclick="$('#fbButton,#fbMenu').removeClass('showMenu');$('#MenuButton,#Menu').toggleClass('showMenu');"/>
+                <div id="fbButton" class="dropbtn" onclick="$('#MenuButton, #Menu').removeClass('showMenu');$('#fbButton,#fbMenu').toggleClass('showMenu');">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.476-1.195 1.176v1.54h2.39l-.31 2.416h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"></path></svg>
+                </div>
+            </div>
+        </div>
+
+        <div id="dropdownMenu" class="centerPage">
+            <div id="DropdownContainer">
+                <div id="fbMenu">
+                    <div class='dropdown-content'>
+
+                    </div>
+                </div>
+                <div id="Menu">
+                </div>
+            </div>
+        </div>
+        <div id="page" class="centerPage">
+
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 27 - Erdem Sen
+                </div>
+                <div class="boxContentFrame" style="height: 400px;">
+                    <div class="boxContent">
+                        <span>O jogador da 27ª jornada foi o médio do Maritimo, Erdem Sen.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada27.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 26 - Luís Machado
+                </div>
+                <div class="boxContentFrame" style="height: 400px;">
+                    <div class="boxContent">
+                        <span>O jogador da 26ª jornada foi o avançado do Feirense, Luís Machado.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada26.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 25 - Bas Dost
+                </div>
+                <div class="boxContentFrame" style="height: 400px;">
+                    <div class="boxContent">
+                        <span>O jogador da 25ª jornada foi o avançado do Sporting CP, Bas Dost.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada25.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 24 - Rui Fonte
+                </div>
+                <div class="boxContentFrame" style="height: 400px;">
+                    <div class="boxContent">
+                        <span>O jogador da 24ª jornada foi o avançado do SC Braga, Rui Fonte.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada17.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 23 - Maurides
+                </div>
+                <div class="boxContentFrame" style="height: 400px;">
+                    <div class="boxContent">
+                        <span>O jogador da 23ª jornada foi o avançado do Os Belenenses, Maurides.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada23.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 22 - Welthon
+                </div>
+                <div class="boxContentFrame" style="height: 400px;">
+                    <div class="boxContent">
+                        <span>O jogador da 22ª jornada foi o avançado do FC P. Ferreira, Welthon.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada22.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 21 - Adrien
+                </div>
+                <div class="boxContentFrame" style="height: 400px;">
+                    <div class="boxContent">
+                        <span>O jogador da 21ª jornada foi o médio do Sporting CP, Adrien.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada21.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 20 - Soares
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 20ª jornada foi o avançado do FC Porto, Soares.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada20.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 19 - João Diogo
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 19ª jornada foi o defesa do Os Belenenses, João Diogo.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada19.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 18 - Pizzi
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 18ª jornada foi o médio do SL Benfica, Pizzi.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada18.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 17 - Rui Fonte
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 17ª jornada foi o avançado do SC Braga, Rui Fonte.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada17.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 16 - Raúl Silva
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 16ª jornada foi o defesa do Maritimo M., Raúl Silva.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada16.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 15 - Vaná
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 15ª jornada foi o guarda-redes do CD Feirense, Vaná.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada15.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 14 - Jorginho
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 14ª jornada foi o avançado do SC Arouca, Jorginho.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada14.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 13 - Marcano
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 13ª jornada foi o defesa do FC Porto, Marcano.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada13.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 12 - Nelsinho
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 12ª jornada foi o defesa do SC Arouca, Nelsinho.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada12.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 11 - Wilson Eduardo
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 11ª jornada foi o avançado do SC Braga, Wilson Eduardo.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada11.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 10 - Gustavo Tocantins
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 10ª jornada foi o avançado do Estoril Praia, Gustavo Tocantins.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada10.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 9 - Moussa Marega
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 9ª jornada foi o avançado do Vitória SC, Moussa Marega.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada9.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 8 - Álex Grimaldo
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 8ª jornada foi o defesa do SL Benfica, Álex Grimaldo.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada8.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 7 - Diogo Jota
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 7ª jornada foi o médio do FC Porto, Diogo Jota.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada7.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 6 - Okacha Hamzaoui
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 6ª jornada foi o avançado do Nacional, Okacha Hamzaoui.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada6.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 5 - Matheus Índio
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 5ª jornada foi o médio do Estoril, Matheus Índio.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada5.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 4 - Karamanos
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 4ª jornada foi o avançado do Feirense, Karamanos.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada4.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 3 - Rafa Soares
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 3ª jornada foi o defesa do Rio Ave, Rafa Soares.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada3.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 2 - Marcelo Oliveira
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 2ª jornada foi o defesa do Moreirense FC, Marcelo Oliveira.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada2.jpg"
+                             style="width:600px;"/>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Jogador da Jornada 1 - Lucas
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <span>O jogador da 1ª jornada foi o defesa do Boavista FC, Lucas.</span>
+                        </p>
+                        <img src="../img/20162017/melhordajornada/melhordajornada1.jpg" />
+                    </div>
+                </div>
+            </div>
+            
+            <div id="newsJogadorDaJornada" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Liga 2016/2017
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td style="width:30%;">
+                                    <img src="./../img/20162017/melhordajornada/liga201612017.jpg" />
+                                </td>
+                                <td style="vertical-align: top; padding-left: 10px;">
+                                    <span>A liga está de volta!</span>
+                                    </p>
+                                    <p>Começa já a pré-época para entrares a todo o gás na nova época.</p>
+                                <p>A pré-época coincide com as 3 jornadas iniciais da liga portuguesa.
+                            </br>
+                            A liga oficial (Os Pontos da Liga) começa a partir da 4ª jornada, a 11/09/2016.</p>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

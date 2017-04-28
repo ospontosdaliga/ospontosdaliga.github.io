@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8" />
+<html>
+    <head>
+        <link rel="icon" href="https://dl.dropboxusercontent.com/u/5606210/OsPontosDaLiga/OsPontosDaLiga.png">
+        <link href="../css/main.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+        <script src="../js/jquery.min.js" type="application/javascript"></script>
+        <script src="../js/main.js" type="application/javascript"></script>
+        <script src="../js/tracker.js" type="application/javascript"></script>
+        <script>
+            setStartPage(0);
+        </script>
+    </head>
+    <body onload="runAfterPageLoad();" class="background-image-1617">
+        <div id="header" class="background-image-dark-1617">
+            <div id="headerBg"></div>
+            <div class="centerPage headerLine">
+                <div id="title">
+                    <span>Os Pontos da Liga</span>
+                    <select id="leagueSelect" onchange="setLeague();">
+                      <option value="1516">2015 / 2016</option>
+                      <option value="1617" selected>2016 / 2017</option>
+                    </select>
+                </div>
+                <div id="userInfo"></div>
+            </div>
+            <div id="headerNav" class="centerPage headerLine">
+                <div id="b1" class="hButton" onclick="setPageTo(1);">Notícias</div>
+                <div id="b2" class="hButton" onclick="setPageTo(2);">Jogadores</div>
+                <div id="b3" class="hButton" onclick="setPageTo(3);">Treinadores</div>
+                <div id="b4" class="hButton" onclick="setPageTo(4);">Calendário</div>
+                <div id="b5" class="hButton" onclick="setPageTo(5);">Classificação</div>
+            <img id="MenuButton" class="dropbtn" onclick="$('#fbButton,#fbMenu').removeClass('showMenu');$('#MenuButton,#Menu').toggleClass('showMenu');" src="https://dl.dropboxusercontent.com/u/5606210/OsPontosDaLiga/menu.png" />
+                <div id="fbButton" class="dropbtn" onclick="$('#MenuButton, #Menu').removeClass('showMenu');$('#fbButton,#fbMenu').toggleClass('showMenu');">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.476-1.195 1.176v1.54h2.39l-.31 2.416h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"></path></svg>
+                </div>
+            </div>
+        </div>
+
+        <div id="dropdownMenu" class="centerPage">
+            <div id="DropdownContainer">
+                <div id="fbMenu">
+                    <div class='dropdown-content'>
+                        
+                    </div>
+                </div>
+                <div id="Menu">
+                </div>
+            </div>
+        </div>
+        <div id="page" class="centerPage">
+            <div id="politicaDePrivacidade" class="boxContainer box1of1">
+                <div class="boxHeader">
+                    Política de Privacidade
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent">
+                        
+                        <b class="note">Privacidade e Segurança:</b>
+                        <p>
+                            O website <i>Os Pontos da Liga</i> não armazena dados do utilizador nos seus servidores.</br>
+                        Os únicos dados armazenados são guardados nos dispositivos do utilizador com o objectivo de melhorar a experiência de navegação do utilizador.
+                        </p>
+
+                        <b class="note">Cookies:</b>
+                        <p>
+                            Quando um utilizador usa o website, este pode armazenar cookies no seu dispositivo. Cookies são pequenas informações que podem ajudar a identificar seu navegador e que podem armazenar dados, como, por exemplo, configurações de aplicativos. <i>Os Pontos da Liga</i> usa cookies para medir uso, para melhorar a facilidade de uso da ferramenta e a experiência do utilizador como um todo.</p>
+
+                <p><b>O que são cookies?</b></br>
+    Cookies são pequenos ficheiros de texto com informação relevante que o seu dispositivo de acesso (computador, telemóvel/smartphone ou tablet) carrega através do navegador (browser) quando visita um website, retendo informação relacionada com as suas preferências, não incluindo os seus dados pessoais.</p>
+
+    <p><b>Funcionalidade dos cookies</b></br>
+    Os cookies são usados para melhorar a experiência de navegação do utilizador, aumentando a rapidez e eficiência de resposta e  eliminam a necessidade de introduzir repetidamente as mesmas informações. Cada cookie utilizado tem uma função e uma data de validade.</p>
+
+                            <p><b>Como controlar os cookies?</b></br>
+    Pode controlar e/ou apagar os cookies que desejar. Para mais informações, consulte o website <a href="http://www.aboutcookies.org/" target="_blank">About Cookies</a>.
+    Pode apagar todos os cookies já instalados no seu computador ou dispositivo móvel ou ativar uma opção disponível na maioria dos programas de navegação que impede a sua instalação.
+    Ao desativar os cookies o website <i>Os Pontos da Liga</i> pode não funcionar corretamente.</p>
+
+                    <b class="note">Links:</b>
+                    <p>O website contém links para outros websites. <i>Os Pontos da Liga</i> não se responsabiliza pelas políticas de privacidade ou conteúdo desses websites.</p>
+
+                    <b class="note">Ficheiros de Registo Estatístico:</b>
+ 
+                    <p>São registados os endereços IP de todas as ligações ao website <i>Os Pontos da Liga</i>. Esta informação será utilizada para efetuar análises estatísticas agregadas, não sendo estabelecida qualquer relação com os serviços e interações com os utilizadores.
+ 
+<i>Os Pontos da Liga</i> monitorizará toda a informação estatística relativa à utilização do website de forma agregada e anónima. Os dados utilizados para este fim não contêm dados de identificação pessoal ou informação privada.
+ 
+As análises efetuadas a partir da informação estatística agregada serão efetuadas para interpretar os padrões de utilização do website e melhorar, de forma contínua, os níveis de serviço e a satisfação do utilizador. A informação estatística agregada resultante das análises efetuadas não será revelada a terceiros ou publicamente.</p>
+
+            <b class="note">Conteúdo do website:</b>
+            <p>O conteúdo do website é baseado nas equipas, jogadores e treinadores da Liga Portuguesa do ano corrente. As pontuações são obtidas de acordo com as exibições de cada jogador ou treinador, de acordo com as regras estabelecidas no jogo.</p>
+<p>Qualquer semelhança do conteúdo com outros websites/jogos é puramente coincidência não podendo <i>Os Pontos da Liga</i> ser acusado de cópia de informação.</p>
+
+            <b class="note">Alterações das nossas práticas de privacidade:</b>
+            <p>Caso o website <i>Os Pontos da Liga</i> altere as suas práticas de privacidade, estas estarão sempre disponíveis neste local.</p>
+
+
+                    </div>
+                </div>
+            </div>              
+        </div>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8" />
+<html>
+    <head>
+        <link rel="icon" href="https://lh6.googleusercontent.com/qJj_kliyP5PugM6ThrtfNlpsB4Y-CIhcX_uf6zyXWMrFaztAnVry6htW9RF6-ETf-TUz4xTjYieQuqA=w940-h673">
+        <link href="../css/main.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+        <script src="../js/jquery.min.js" type="application/javascript"></script>
+        <script src="../js/main.js" type="application/javascript"></script>
+        <script src="../js/tracker.js" type="application/javascript"></script>
+        <script>
+            setStartPage(1);
+        </script>
+    </head>
+    <body onload="runAfterPageLoad();" class="background-image-1516">
+        <div id="header" class="background-image-dark-1516">
+            <div class="centerPage headerLine">
+                <div id="title">
+                    <span>Os Pontos da Liga</span>
+                    <select id="leagueSelect" onchange="setLeague();">
+                      <option value="1516" selected>2015 / 2016</option>
+                      <option value="1617">2016 / 2017</option>
+                    </select>
+                </div>
+                <div id="userInfo"></div>
+            </div>
+            <div id="headerNav" class="centerPage headerLine">
+                <div id="b1" class="hButton hSelected" onclick="setPageTo(1);">Notícias</div>
+                <div id="b2" class="hButton" onclick="setPageTo(2);">Jogadores</div>
+                <div id="b3" class="hButton" onclick="setPageTo(3);">Treinadores</div>
+                <div id="b4" class="hButton" onclick="setPageTo(4);">Calendário</div>
+                <div id="b5" class="hButton" onclick="setPageTo(5);">Classificação</div>
+            <img id="MenuButton" class="dropbtn" onclick="$('#fbButton,#fbMenu').removeClass('showMenu');$('#MenuButton,#Menu').toggleClass('showMenu');"  />
+                <div id="fbButton" class="dropbtn" onclick="$('#MenuButton, #Menu').removeClass('showMenu');$('#fbButton,#fbMenu').toggleClass('showMenu');">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.476-1.195 1.176v1.54h2.39l-.31 2.416h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"></path></svg>
+                </div>
+            </div>
+        </div>
+
+        <div id="dropdownMenu" class="centerPage">
+            <div id="DropdownContainer">
+                <div id="fbMenu">
+                    <div class='dropdown-content'>
+                        
+                    </div>
+                </div>
+                <div id="Menu">
+                </div>
+            </div>
+        </div>
+        <div id="page" class="centerPage">
+            <div id="news1" class="boxContainer box1of1">
+                <div class="boxHeader">
+                    Benfica conquistou a liga 2015/2016
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent scrollable">
+                        <img src="https://lh6.googleusercontent.com/YORwBtjS77ykfbeetL3sfwPOd6gnvzstLx3c0020hnWrCN8HHE6Q-XotlqxTj-ijTO9WI-plmZbAl2w=w940-h673-rw"></img>
+                        <p>O Benfica sagrou-se tricampeão nacional depois de ter vencido o Nacional por 4-1, na última jornada. Terminou a época com 88 pontos superando os rivais Sporting CP (83) e FC Porto (76).</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="news2" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Acesso às competições europeias
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent boxTall scrollable">
+                        <span class="note">Liga dos Campeões</span>
+                        <p>SL Benfica, Sporting CP</p>
+                        <span class="note">Liga dos Campeões (Play-Off)</span>
+                        <p>FC Porto</p>
+                        <span class="note">Liga Europa</span>
+                        <p>Braga</p>
+                        <span class="note">Liga Europa (3ª Pré-Eliminatória)</span>
+                        <p>Arouca</p>
+                        <p>Rio Ave</p>
+                    </div>
+                </div>
+            </div>
+            <div id="news3" class="boxContainer box1of2">
+                <div class="boxHeader">
+                    Promoçoes e Despromoções
+                </div>
+                <div class="boxContentFrame">
+                    <div class="boxContent boxTall scrollable">
+                        <span class="note">Equipas promovidas à 1ª Liga</span>
+                        <p>Portimonense</p>
+                        <p>Santa Clara</p>
+                        <span class="note">Equipas despromovidas para a 2ª Liga</span>
+                        <p>Académica</p>
+                        <p>União da Madeira</p>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </body>
+</html>
